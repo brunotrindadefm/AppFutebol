@@ -1,1 +1,59 @@
-<p>tela-time-componente works!</p>
+<div class="p-6 bg-gray-900 rounded-lg shadow-lg text-gray-100 w-full mx-auto">
+
+    <div class="flex justify-between items-center mb-6">
+        <div>
+            <h2 class="text-2xl font-semibold">Gerenciar Times</h2>
+            <p class="text-sm mt-1">Total de {{ times.length }} times cadastrados no sistema</p>
+        </div>
+
+        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
+            + Adicionar Time
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div
+            *ngFor="let time of times"
+            class="bg-gray-800 rounded-xl p-5 shadow-md hover:shadow-xl transition border border-gray-700 relative"
+        >
+
+            <span
+                class="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                {{ time.pontos }}
+            </span>
+
+            <h3 class="text-xl font-bold">{{ time.nome }}</h3>
+            <p class="text-sm text-gray-400">{{ time.cidade }}</p>
+
+            <div class="mt-4">
+                <p class="text-gray-400 text-sm">Estádio:</p>
+                <p class="font-semibold">{{ time.estadio }}</p>
+            </div>
+
+            <div class="mt-2">
+                <p class="text-gray-400 text-sm">Fundado em:</p>
+                <p class="font-semibold">{{ time.fundacao }}</p>
+            </div>
+
+            <div class="flex items-center gap-2 mt-4 pt-3 border-t border-gray-700">
+
+                <button class="flex-1 bg-blue-600 hover:bg-blue-700 py-2 rounded-lg text-sm font-semibold flex items-center justify-center gap-2">
+                    <span>👁</span> Detalhes
+                </button>
+
+                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm">
+                    ✏️
+                </button>
+
+                <button class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded-lg text-sm">
+                    🗑️
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
