@@ -199,28 +199,32 @@
             "nome": "Bruno Trindade",
             "email": "bruno@admin.com",
             "funcao": "Administrador",
-            "status": true
+            "status": true,
+            "senha": 123
         },
         {
             "id": "2",
             "nome": "Maria Santos",
             "email": "maria@email.com",
             "funcao": "Usuário",
-            "status": true
+            "status": true,
+            "senha": 123
         },
         {
             "id": "3",
             "nome": "Pedro Costa",
             "email": "pedro@email.com",
             "funcao": "Usuário",
-            "status": false
+            "status": false,
+            "senha": 123
         },
         {
             "id": "4",
             "nome": "Ana Oliveira",
             "email": "ana@email.com",
             "funcao": "Administrador",
-            "status": true
+            "status": true,
+            "senha": 123
         }
     ]
 }

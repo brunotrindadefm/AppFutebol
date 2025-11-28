@@ -3,5 +3,6 @@ export interface IUsuario {
     nome: string;
     email: string;
     funcao: string;
-    status: boolean
+    status: boolean;
+    senha: string
 }

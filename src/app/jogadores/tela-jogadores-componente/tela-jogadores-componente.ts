@@ -4,6 +4,7 @@ import { IJogador } from '../../interfaces/IJogador';
 import { JogadorService } from '../../services/jogador/jogador-service';
 import { TimeService } from '../../services/time/time-service';
 import { firstValueFrom } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tela-jogadores-componente',
@@ -15,7 +16,7 @@ export class TelaJogadoresComponente {
 
   jogadores: IJogador[] = [];
 
-  constructor(private jogadorService: JogadorService, private timeService: TimeService) { }
+  constructor(private jogadorService: JogadorService, private timeService: TimeService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.carregarJogadores();
@@ -44,8 +45,10 @@ export class TelaJogadoresComponente {
 
         this.jogadores = this.jogadores.filter(j => j.id !== idJogador);
 
-      } catch (erro) {
-        alert('Não foi possível deletar o time.');
+         this.toastr.success("Jogador deleatado com sucesso!", 'Sucesso');
+
+      } catch (erro: any) {
+        this.toastr.error(erro.message, 'Erro ao deletar');
       }
     }
   }

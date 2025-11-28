@@ -6,13 +6,13 @@
 
         <h2 class="text-3xl font-bold text-center">Login</h2>
 
-        <form class="mt-6 space-y-5 w-full">
+        <form class="mt-6 space-y-5 w-full" (ngSubmit)="login()">
 
             <div>
                 <label class="text-sm text-gray-300">Email:</label>
-                <input type="email"
+                <input type="email" [(ngModel)]="email"
                     class="w-full px-4 py-3 mt-1 bg-[#121a2f] border border-[#2a3555] rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-2"
-                    placeholder="Email" />
+                    placeholder="Email" name="email" />
             </div>
 
             <div>
@@ -20,14 +20,14 @@
                     <label class="text-sm text-gray-300 mb-1">Senha:</label>
                 </div>
 
-                <input type="password"
+                <input type="password" [(ngModel)]="senha"
                     class="w-full px-4 py-3 mt-1 bg-[#121a2f] border border-[#2a3555] rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    placeholder="Senha" />
+                    placeholder="Senha" name="senha" />
             </div>
 
             <button class="w-full py-3 bg-[#2a3555]/50 text-gray-400 rounded-md hover:bg-[#2a2b55]/50"
-                (click)="login()">
-                Entrar
+                type="submit">
+                Entrar 
             </button>
         </form>
     </div>

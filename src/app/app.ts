@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NavComponente } from './header/nav-componente/nav-componente';
 import { filter } from 'rxjs';
 import { AsideComponente } from './aside/aside-componente/aside-componente';
+import { AuthService } from './services/auth/auth-service';
 
 @Component({
   selector: 'app-root',
@@ -16,21 +17,24 @@ export class App implements OnInit {
 
   mostrarAsideV: boolean = false;
   ehPaginaDeLogin: boolean = false;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    const usuarioLogado = localStorage.getItem("usuario");
+
+    if(!usuarioLogado)
+      this.router.navigate(["/login"])
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.gerenciarVisibilidadeAside(event.url);
-
     });
 
   }
 
   gerenciarVisibilidadeAside(urlAtual: string) {
     this.ehPaginaDeLogin = urlAtual.includes('/login') || urlAtual === '/';
-
     if (this.ehPaginaDeLogin) {
       this.mostrarAsideV = false;
     } else {
@@ -56,7 +60,7 @@ export class App implements OnInit {
   }
 
   logout() {
-    this.router.navigate(["/login"]);
+    this.authService.logout()
     this.ehPaginaDeLogin = true;
   }
 }
