@@ -1,19 +1,62 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { Component, OnInit, signal } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { NavComponente } from './header/nav-componente/nav-componente';
+import { filter } from 'rxjs';
+import { AsideComponente } from './aside/aside-componente/aside-componente';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NgIf],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, NavComponente, AsideComponente],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('AppFutebol');
-  
+
   mostrarAsideV: boolean = false;
+  ehPaginaDeLogin: boolean = false;
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.gerenciarVisibilidadeAside(event.url);
+
+    });
+
+  }
+
+  gerenciarVisibilidadeAside(urlAtual: string) {
+    this.ehPaginaDeLogin = urlAtual.includes('/login') || urlAtual === '/';
+
+    if (this.ehPaginaDeLogin) {
+      this.mostrarAsideV = false;
+    } else {
+      const estadoSalvo = localStorage.getItem('asideVisivel');
+      if (estadoSalvo === 'true') {
+        this.mostrarAsideV = true;
+      }
+    }
+  }
 
   mostrarAside() {
     this.mostrarAsideV = true;
+    localStorage.setItem('asideVisivel', 'true');
+  }
+
+  esconderAside() {
+    this.mostrarAsideV = false;
+    localStorage.removeItem('asideVisivel');
+  }
+
+  toggleAside() {
+    this.mostrarAsideV = !this.mostrarAsideV;
+  }
+
+  logout() {
+    this.router.navigate(["/login"]);
+    this.ehPaginaDeLogin = true;
   }
 }

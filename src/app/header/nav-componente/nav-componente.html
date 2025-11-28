@@ -1,0 +1,15 @@
+<header class="h-16 bg-gray-800 border-b border-gray-700 flex items-center justify-between px-6 shadow-md z-10">
+
+    <div class="flex gap-3 justify-center items-center">
+        <span (click)="toggleMenu()" class="cursor-pointer">☰</span>
+        <h3 class="text-lg font-semibold text-gray-100">Tela</h3>
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <span class="text-sm text-gray-400">Olá, Admin</span>
+        <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm transition" (click)="toggleLogout()">
+            Sair
+        </button>
+    </div>
+
+</header>

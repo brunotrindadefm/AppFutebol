@@ -1,58 +1,38 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ITime } from '../../interfaces/ITime';
+import { TimeService } from '../../services/time/time-service';
 
 @Component({
   selector: 'app-tela-time',
-  standalone: true,           
-  imports: [NgFor],                
+  standalone: true,
+  imports: [NgFor],
   templateUrl: './tela-time-componente.html',
   styleUrls: ['./tela-time-componente.scss']
 })
 
-export class TelaTimeComponente {
+export class TelaTimeComponente implements OnInit {
+  times: ITime[] = [];
 
-  times = [
-    {
-      nome: 'Flamengo',
-      cidade: 'Rio de Janeiro - RJ',
-      estadio: 'Maracanã',
-      fundacao: 1895,
-      pontos: 28
-    },
-    {
-      nome: 'Palmeiras',
-      cidade: 'São Paulo - SP',
-      estadio: 'Allianz Parque',
-      fundacao: 1914,
-      pontos: 30
-    },
-    {
-      nome: 'Corinthians',
-      cidade: 'São Paulo - SP',
-      estadio: 'Neo Química Arena',
-      fundacao: 1910,
-      pontos: 25
-    },
-    {
-      nome: 'São Paulo',
-      cidade: 'São Paulo - SP',
-      estadio: 'Morumbi',
-      fundacao: 1930,
-      pontos: 27
-    },
-    {
-      nome: 'Internacional',
-      cidade: 'Porto Alegre - RS',
-      estadio: 'Beira-Rio',
-      fundacao: 1909,
-      pontos: 26
-    },
-    {
-      nome: 'Grêmio',
-      cidade: 'Porto Alegre - RS',
-      estadio: 'Arena do Grêmio',
-      fundacao: 1903,
-      pontos: 24
+  constructor(private timeService: TimeService) { }
+
+  async ngOnInit(): Promise<void> {
+    this.times = await this.timeService.getAll();
+  }
+
+  async deletarTime(idTime: number | string) {
+    const confirmacao = confirm("Tem certeza que deseja excluir este time?");
+
+    if (confirmacao) {
+      try {
+        await this.timeService.delete(idTime);
+
+        this.times = this.times.filter(time => time.id !== idTime);
+
+      } catch (erro) {
+        alert('Não foi possível deletar o time.');
+      }
     }
-  ];
+  }
+
 }

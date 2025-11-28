@@ -12,37 +12,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="hover:bg-gray-800">
-                <td class="px-4 py-2 border border-gray-700 font-semibold">João Silva</td>
-                <td class="px-4 py-2 border border-gray-700">joao@email.com</td>
-                <td class="px-4 py-2 border border-gray-700">Administrador</td>
-                <td class="px-4 py-2 border border-gray-700">
-                    <span class="text-xs bg-green-600 rounded-full px-2 py-0.5 font-semibold">Ativo</span>
+            <tr *ngFor="let usuario of usuarios" class="hover:bg-gray-800">
+
+                <td class="px-4 py-2 border border-gray-700 font-semibold">
+                    {{ usuario.nome }}
                 </td>
-            </tr>
-            <tr class="hover:bg-gray-800">
-                <td class="px-4 py-2 border border-gray-700 font-semibold">Maria Santos</td>
-                <td class="px-4 py-2 border border-gray-700">maria@email.com</td>
-                <td class="px-4 py-2 border border-gray-700">Usuário</td>
+
                 <td class="px-4 py-2 border border-gray-700">
-                    <span class="text-xs bg-green-600 rounded-full px-2 py-0.5 font-semibold">Ativo</span>
+                    {{ usuario.email }}
                 </td>
-            </tr>
-            <tr class="hover:bg-gray-800">
-                <td class="px-4 py-2 border border-gray-700 font-semibold">Pedro Costa</td>
-                <td class="px-4 py-2 border border-gray-700">pedro@email.com</td>
-                <td class="px-4 py-2 border border-gray-700">Usuário</td>
+
                 <td class="px-4 py-2 border border-gray-700">
-                    <span class="text-xs bg-red-600 rounded-full px-2 py-0.5 font-semibold">Inativo</span>
+                    {{ usuario.funcao }}
                 </td>
-            </tr>
-            <tr class="hover:bg-gray-800">
-                <td class="px-4 py-2 border border-gray-700 font-semibold">Ana Oliveira</td>
-                <td class="px-4 py-2 border border-gray-700">ana@email.com</td>
-                <td class="px-4 py-2 border border-gray-700">Administrador</td>
                 <td class="px-4 py-2 border border-gray-700">
-                    <span class="text-xs bg-green-600 rounded-full px-2 py-0.5 font-semibold">Ativo</span>
+                    <span class="text-xs rounded-full px-2 py-0.5 font-semibold"
+                        [ngClass]="usuario.status ? 'bg-green-600' : 'bg-red-600'">
+                        {{ usuario.status ? 'Ativo' : 'Inativo' }}
+                    </span>
                 </td>
+
             </tr>
         </tbody>
     </table>

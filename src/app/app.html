@@ -1,16 +1,13 @@
 <div class="min-h-screen flex bg-gray-900 text-gray-200">
-  <aside *ngIf="mostrarAsideV" class="w-64 bg-gray-800 p-6 flex flex-col space-y-4">
-    <h2 class="text-xl font-semibold">Menu</h2>
-    <div class="h-1 bg-white"></div>
-    <nav class="flex flex-col space-y-2">
-      <a routerLink="/time" routerLinkActive="bg-gray-700"
-      class="px-4 py-2 rounded hover:bg-gray-700 cursor-pointer">Time</a>
-      <a routerLink="/usuarios" routerLinkActive="bg-gray-700"
-        class="px-4 py-2 rounded hover:bg-gray-700 cursor-pointer">Usuários</a>
-    </nav>
-  </aside>
+  <div *ngIf="mostrarAsideV">
+    <app-aside-componente></app-aside-componente>
+  </div>
 
-  <main class="flex-1 p-8">
-    <router-outlet></router-outlet>
-  </main>
+  <div class="flex-1 flex flex-col min-w-0">
+    <app-nav-componente *ngIf="!ehPaginaDeLogin" (toggleMenuClick)="toggleAside()" (toggleLogoutClick)="logout()"></app-nav-componente>
+
+    <main class="flex-1 p-8">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>

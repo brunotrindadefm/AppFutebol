@@ -1,0 +1,226 @@
+{
+    "times": [
+        {
+            "id": "1",
+            "nome": "Flamengo",
+            "cidade": "Rio de Janeiro - RJ",
+            "estadio": "Maracanã",
+            "fundacao": 1895
+        },
+        {
+            "id": "2",
+            "nome": "Fluminense",
+            "cidade": "Rio de Janeiro - RJ",
+            "estadio": "Maracanã",
+            "fundacao": 1902
+        },
+        {
+            "id": "3",
+            "nome": "Vasco da Gama",
+            "cidade": "Rio de Janeiro - RJ",
+            "estadio": "São Januário",
+            "fundacao": 1898
+        },
+        {
+            "id": "4",
+            "nome": "Botafogo",
+            "cidade": "Rio de Janeiro - RJ",
+            "estadio": "Nilton Santos",
+            "fundacao": 1904
+        },
+        {
+            "id": "5",
+            "nome": "São Paulo",
+            "cidade": "São Paulo - SP",
+            "estadio": "Morumbi",
+            "fundacao": 1930
+        },
+        {
+            "id": "6",
+            "nome": "Corinthians",
+            "cidade": "São Paulo - SP",
+            "estadio": "Neo Química Arena",
+            "fundacao": 1910
+        },
+        {
+            "id": "7",
+            "nome": "Palmeiras",
+            "cidade": "São Paulo - SP",
+            "estadio": "Allianz Parque",
+            "fundacao": 1914
+        },
+        {
+            "id": "8",
+            "nome": "Santos",
+            "cidade": "Santos - SP",
+            "estadio": "Vila Belmiro",
+            "fundacao": 1912
+        },
+        {
+            "id": "9",
+            "nome": "Grêmio",
+            "cidade": "Porto Alegre - RS",
+            "estadio": "Arena do Grêmio",
+            "fundacao": 1903
+        },
+        {
+            "id": "10",
+            "nome": "Internacional",
+            "cidade": "Porto Alegre - RS",
+            "estadio": "Beira-Rio",
+            "fundacao": 1909
+        },
+        {
+            "id": "11",
+            "nome": "Atlético Mineiro",
+            "cidade": "Belo Horizonte - MG",
+            "estadio": "Arena MRV",
+            "fundacao": 1908
+        },
+        {
+            "id": "12",
+            "nome": "Cruzeiro",
+            "cidade": "Belo Horizonte - MG",
+            "estadio": "Mineirão",
+            "fundacao": 1921
+        },
+        {
+            "id": "13",
+            "nome": "América Mineiro",
+            "cidade": "Belo Horizonte - MG",
+            "estadio": "Independência",
+            "fundacao": 1912
+        },
+        {
+            "id": "14",
+            "nome": "Bahia",
+            "cidade": "Salvador - BA",
+            "estadio": "Arena Fonte Nova",
+            "fundacao": 1931
+        },
+        {
+            "id": "15",
+            "nome": "Vitória",
+            "cidade": "Salvador - BA",
+            "estadio": "Barradão",
+            "fundacao": 1899
+        },
+        {
+            "id": "16",
+            "nome": "Athletico Paranaense",
+            "cidade": "Curitiba - PR",
+            "estadio": "Arena da Baixada",
+            "fundacao": 1924
+        },
+        {
+            "id": "17",
+            "nome": "Coritiba",
+            "cidade": "Curitiba - PR",
+            "estadio": "Couto Pereira",
+            "fundacao": 1909
+        },
+        {
+            "id": "18",
+            "nome": "Ceará",
+            "cidade": "Fortaleza - CE",
+            "estadio": "Castelão",
+            "fundacao": 1914
+        },
+        {
+            "id": "19",
+            "nome": "Fortaleza",
+            "cidade": "Fortaleza - CE",
+            "estadio": "Castelão",
+            "fundacao": 1918
+        },
+        {
+            "id": "20",
+            "nome": "Sport",
+            "cidade": "Recife - PE",
+            "estadio": "Ilha do Retiro",
+            "fundacao": 1905
+        },
+        {
+            "id": "21",
+            "nome": "Náutico",
+            "cidade": "Recife - PE",
+            "estadio": "Aflitos",
+            "fundacao": 1901
+        },
+        {
+            "id": 22,
+            "nome": "Santa Cruz",
+            "cidade": "Recife - PE",
+            "estadio": "Arruda",
+            "fundacao": 1914
+        }
+    ],
+    "jogadores": [
+        {
+            "id": "101",
+            "nome": "Arrascaeta",
+            "posicao": "Meio-Campo",
+            "timeId": 1,
+            "numero": 14,
+            "nacionalidade": "Uruguaio",
+            "idade": "31"
+        },
+        {
+            "id": "102",
+            "nome": "Hulk",
+            "posicao": "Atacante",
+            "timeId": 11,
+            "numero": 7,
+            "nacionalidade": "Brasileiro",
+            "idade": "33"
+        },
+        {
+            "id": "103",
+            "nome": "Dudu",
+            "posicao": "Atacante",
+            "timeId": 7,
+            "numero": 92,
+            "nacionalidade": "Brasileiro",
+            "idade": "39"
+        },
+        {
+            "id": "104",
+            "nome": "Calleri",
+            "posicao": "Atacante",
+            "timeId": 5,
+            "numero": 9,
+            "nacionalidade": "Argentino",
+            "idade": "32"
+        }
+    ],
+    "usuarios": [
+        {
+            "id": "1",
+            "nome": "Bruno Trindade",
+            "email": "bruno@admin.com",
+            "funcao": "Administrador",
+            "status": true
+        },
+        {
+            "id": "2",
+            "nome": "Maria Santos",
+            "email": "maria@email.com",
+            "funcao": "Usuário",
+            "status": true
+        },
+        {
+            "id": "3",
+            "nome": "Pedro Costa",
+            "email": "pedro@email.com",
+            "funcao": "Usuário",
+            "status": false
+        },
+        {
+            "id": "4",
+            "nome": "Ana Oliveira",
+            "email": "ana@email.com",
+            "funcao": "Administrador",
+            "status": true
+        }
+    ]
+}
