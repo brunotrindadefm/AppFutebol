@@ -6,7 +6,7 @@
     </div>
 
     <div class="flex items-center space-x-4">
-        <span class="text-sm text-gray-400">{{ usuario.nome }}</span>
+        <span class="text-sm text-gray-400">{{ usuario?.nome }}</span>
         <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm transition" (click)="toggleLogout()">
             Sair
         </button>

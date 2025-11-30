@@ -4,6 +4,7 @@ import { ITime } from '../../interfaces/ITime';
 import { TimeService } from '../../services/time/time-service';
 import { ModalTimeComponente } from '../modal-time-componente/modal-time-componente';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tela-time',
@@ -18,7 +19,10 @@ export class TelaTimeComponente implements OnInit {
   modalAberto: boolean = false;
   timeSelecionado: ITime | null = null;
 
-  constructor(private timeService: TimeService, private toastr: ToastrService) { }
+  constructor(private timeService: TimeService,
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   async ngOnInit(): Promise<void> {
     this.times = await this.timeService.getAll();
@@ -72,6 +76,12 @@ export class TelaTimeComponente implements OnInit {
       this.toastr.success('Time salvo com sucesso!');
     } catch (erro: any) {
       this.toastr.error('Erro ao salvar', erro.message);
+    }
+  }
+
+  irParaDetalhes(idTime: number | string | undefined) {
+    if (idTime) {
+      this.router.navigate(['/time/detalhes', idTime]);
     }
   }
 }

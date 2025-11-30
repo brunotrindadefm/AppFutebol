@@ -216,6 +216,15 @@
       "nacionalidade": "Brasileiro",
       "idade": 90,
       "timeId": "13"
+    },
+    {
+      "id": "da02",
+      "nome": "Danilo",
+      "posicao": "Defensor",
+      "numero": 2,
+      "nacionalidade": "Brasileiro",
+      "idade": 31,
+      "timeId": "1"
     }
   ],
   "usuarios": [

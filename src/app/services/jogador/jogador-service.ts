@@ -9,7 +9,14 @@ import { BaseService } from '../base-service';
 })
 export class JogadorService extends BaseService<IJogador> {
 
+  baseUrl = 'http://localhost:3000/jogadores';
+
   constructor(protected override http: HttpClient) {
     super(http, 'http://localhost:3000/jogadores');
+  }
+
+  async getByTimeId(timeId : number | string): Promise<IJogador[]> {
+    const url = `${this.baseUrl}?timeId=${timeId}`;
+    return firstValueFrom(this.http.get<IJogador[]>(url));
   }
 }

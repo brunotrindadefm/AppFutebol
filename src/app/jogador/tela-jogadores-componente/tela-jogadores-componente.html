@@ -49,16 +49,18 @@
 
             <div class="flex items-center gap-2 mt-4 pt-3 border-t border-gray-700">
 
-                <button
+                <button (click)="irParaDetalhes(jogador.id!)"
                     class="flex-1 bg-blue-600 hover:bg-blue-700 py-2 rounded-lg text-sm font-semibold flex items-center justify-center gap-2">
                     Detalhes
                 </button>
 
-                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm" (click)="abrirModalEdicao(jogador)">
+                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm"
+                    (click)="abrirModalEdicao(jogador)">
                     ✏️
                 </button>
 
-                <button class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded-lg text-sm" (click)="deletarJogador(jogador.id)">
+                <button class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded-lg text-sm"
+                    (click)="deletarJogador(jogador.id!)">
                     🗑️
                 </button>
 
@@ -68,7 +70,7 @@
 
     </div>
 
-     <app-modal-jogador-componente *ngIf="modalAberto" [jogadorParaEditar]="jogadorSelecionado" (fechar)="fecharModal()"
+    <app-modal-jogador-componente *ngIf="modalAberto" [jogadorParaEditar]="jogadorSelecionado" (fechar)="fecharModal()"
         (salvar)="processarSalvar($event)" [times]="listaDeTimes">
     </app-modal-jogador-componente>
 </div>

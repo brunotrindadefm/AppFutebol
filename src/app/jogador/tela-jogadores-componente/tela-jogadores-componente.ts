@@ -6,6 +6,7 @@ import { TimeService } from '../../services/time/time-service';
 import { ToastrService } from 'ngx-toastr';
 import { ModalJogadorComponente } from '../modal-jogador-componente/modal-jogador-componente';
 import { ITime } from '../../interfaces/ITime';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tela-jogadores-componente',
@@ -19,7 +20,11 @@ export class TelaJogadoresComponente {
   jogadorSelecionado: IJogador | null = null;
   listaDeTimes: ITime[] = [];
 
-  constructor(private jogadorService: JogadorService, private timeService: TimeService, private toastr: ToastrService) { }
+  constructor(private jogadorService: JogadorService,
+    private timeService: TimeService,
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   async ngOnInit(): Promise<void> {
     this.listaDeTimes = await this.timeService.getAll();
@@ -90,4 +95,7 @@ export class TelaJogadoresComponente {
     }
   }
 
+  irParaDetalhes(id: number) {
+    this.router.navigate(['/jogador/detalhes', id]);
+  }
 }
