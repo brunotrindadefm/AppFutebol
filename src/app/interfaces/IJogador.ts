@@ -1,7 +1,7 @@
 import { ITime } from "./ITime";
 
 export interface IJogador {
-    id: number;
+    id?: number;
     nome: string;
     posicao: string;
     timeId: number;

@@ -6,7 +6,8 @@
             <p class="text-sm mt-1">Total de {{ times.length }} times cadastrados no sistema</p>
         </div>
 
-        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
+        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold"
+            (click)="abrirModalCriacao()">
             + Adicionar Time
         </button>
     </div>
@@ -41,7 +42,8 @@
                     Detalhes
                 </button>
 
-                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm">
+                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm"
+                    (click)="abrirModalEdicao(time)">
                     ✏️
                 </button>
 
@@ -55,4 +57,7 @@
 
     </div>
 
+    <app-modal-time-componente *ngIf="modalAberto" [timeParaEditar]="timeSelecionado" (fechar)="fecharModal()"
+        (salvar)="processarSalvar($event)">
+    </app-modal-time-componente>
 </div>

@@ -1,5 +1,5 @@
 export interface ITime {
-    id: number,
+    id?: number,
     nome: string,
     cidade: string,
     estadio: string,

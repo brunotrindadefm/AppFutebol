@@ -1,5 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
+import { RouterOutlet,  Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavComponente } from './header/nav-componente/nav-componente';
 import { filter } from 'rxjs';
@@ -8,7 +8,7 @@ import { AuthService } from './services/auth/auth-service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, NavComponente, AsideComponente],
+  imports: [RouterOutlet, CommonModule, NavComponente, AsideComponente],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

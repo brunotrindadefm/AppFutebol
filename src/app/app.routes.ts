@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponente } from './auth/login-componente/login-componente';
 import { TelaUsuarioComponente } from './usuarios/tela-usuario-componente/tela-usuario-componente';
 import { TelaTimeComponente } from './time/tela-time-componente/tela-time-componente';
-import { TelaJogadoresComponente } from './jogadores/tela-jogadores-componente/tela-jogadores-componente';
+import { TelaJogadoresComponente } from './jogador/tela-jogadores-componente/tela-jogadores-componente';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },

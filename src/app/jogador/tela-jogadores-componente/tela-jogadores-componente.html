@@ -6,7 +6,8 @@
             <p class="text-sm mt-1">Total de {{ jogadores.length }} Jogadores cadastrados no sistema</p>
         </div>
 
-        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
+        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold"
+            (click)="abrirModalCriacao()">
             + Adicionar jogador
         </button>
     </div>
@@ -53,7 +54,7 @@
                     Detalhes
                 </button>
 
-                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm">
+                <button class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm" (click)="abrirModalEdicao(jogador)">
                     ✏️
                 </button>
 
@@ -67,4 +68,7 @@
 
     </div>
 
+     <app-modal-jogador-componente *ngIf="modalAberto" [jogadorParaEditar]="jogadorSelecionado" (fechar)="fecharModal()"
+        (salvar)="processarSalvar($event)" [times]="listaDeTimes">
+    </app-modal-jogador-componente>
 </div>

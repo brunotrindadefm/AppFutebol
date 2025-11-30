@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-aside-componente',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [ RouterLink, RouterLinkActive],
   templateUrl: './aside-componente.html',
   styleUrl: './aside-componente.scss',
 })

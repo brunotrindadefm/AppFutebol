@@ -1,0 +1,72 @@
+<div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+  <div class="bg-gray-800 p-6 rounded-lg shadow-xl w-96 border border-gray-700 max-h-[90vh] overflow-y-auto">
+
+    <h3 class="text-xl font-bold text-white mb-4">
+      {{ jogadorParaEditar ? 'Editar Jogador' : 'Novo Jogador' }}
+    </h3>
+
+    <div class="space-y-4">
+      
+      <div>
+        <label class="text-gray-400 text-sm">Nome do Jogador</label>
+        <input type="text" [(ngModel)]="dadosFormulario.nome" placeholder="Ex: Hulk"
+          class="w-full bg-gray-700 text-white rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      </div>
+
+      <div>
+        <label class="text-gray-400 text-sm">Posição</label>
+        <select [(ngModel)]="dadosFormulario.posicao"
+          class="w-full bg-gray-700 text-white rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="" disabled>Selecione a posição</option>
+          <option value="Goleiro">Goleiro</option>
+          <option value="Defensor">Defensor</option>
+          <option value="Meio-Campo">Meio-Campo</option>
+          <option value="Atacante">Atacante</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-gray-400 text-sm">Time</label>
+        <select [(ngModel)]="dadosFormulario.timeId"
+          class="w-full bg-gray-700 text-white rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option [ngValue]="0" disabled>Selecione um time</option>
+          <option *ngFor="let time of times" [ngValue]="time.id">
+            {{ time.nome }}
+          </option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="text-gray-400 text-sm">Número</label>
+          <input type="number" [(ngModel)]="dadosFormulario.numero" placeholder="7"
+            class="w-full bg-gray-700 text-white rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+        <div>
+          <label class="text-gray-400 text-sm">Idade</label>
+          <input type="number" [(ngModel)]="dadosFormulario.idade" placeholder="35"
+            class="w-full bg-gray-700 text-white rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+      </div>
+
+      <div>
+        <label class="text-gray-400 text-sm">Nacionalidade</label>
+        <input type="text" [(ngModel)]="dadosFormulario.nacionalidade" placeholder="Ex: Brasileiro"
+          class="w-full bg-gray-700 text-white rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      </div>
+
+    </div>
+
+    <div class="flex justify-end gap-2 mt-6">
+      <button (click)="cancelar()" class="px-4 py-2 text-gray-300 hover:text-white transition-colors">
+        Cancelar
+      </button>
+      <button (click)="confirmar()"
+        class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors">
+        {{ jogadorParaEditar ? 'Salvar' : 'Criar' }}
+      </button>
+    </div>
+
+  </div>
+</div>
