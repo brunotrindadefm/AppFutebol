@@ -238,25 +238,25 @@
     },
     {
       "id": "2",
-      "nome": "Maria Santos",
-      "email": "maria@email.com",
-      "funcao": "Usuário",
+      "nome": "Davi Aguiar",
+      "email": "davi@admin.com",
+      "funcao": "Administrador",
       "status": true,
       "senha": 123
     },
     {
       "id": "3",
-      "nome": "Pedro Costa",
-      "email": "pedro@email.com",
-      "funcao": "Usuário",
+      "nome": "Gustavo Costa",
+      "email": "gustavo@admin.com",
+      "funcao": "Administrador",
       "status": false,
       "senha": 123
     },
     {
       "id": "4",
-      "nome": "Ana Oliveira",
-      "email": "ana@email.com",
-      "funcao": "Administrador",
+      "nome": "Air",
+      "email": "air@email.com",
+      "funcao": "Usuário",
       "status": true,
       "senha": 123
     }
